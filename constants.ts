@@ -83,23 +83,26 @@ export const TRACKS: Track[] = [
     id: 'track3',
     name: 'Hairpin Hollow',
     color: '#111827',
-    startPosition: { x: 100, y: 650 },
-    startRotation: 0,
+    startPosition: { x: 512, y: 680 },
+    startRotation: Math.PI, // Facing Left
+    // Large bounding box
     outerWalls: generateWalls([
-       [20, 600], [200, 600], [250, 400], [100, 200], [200, 50], 
-       [800, 50], [950, 200], [950, 600], [400, 600], [350, 700], 
-       [980, 750], [980, 20], [20, 20]
+       [20, 20], [1004, 20], [1004, 748], [20, 748]
     ]),
-    innerWalls: generateWalls([
-       [150, 700], [300, 700], [350, 500], [200, 300], [300, 150],
-       [700, 150], [800, 300], [800, 500], [500, 500], [550, 400],
-       [700, 400], [600, 250], [400, 250], [300, 350], [450, 550], [150, 550]
-    ]),
+    // Three vertical island dividers to create a "Folded M" layout
+    innerWalls: [
+       // Divider 1 (Left)
+       ...createBox(260, 150, 40, 450),
+       // Divider 2 (Middle)
+       ...createBox(512, 150, 40, 450),
+       // Divider 3 (Right)
+       ...createBox(764, 150, 40, 450),
+    ],
     checkpoints: [
-       { p1: { x: 20, y: 650 }, p2: { x: 200, y: 650 } }, // Start/Finish
-       { p1: { x: 100, y: 200 }, p2: { x: 200, y: 300 } }, // Hairpin 1 entry
-       { p1: { x: 800, y: 50 }, p2: { x: 800, y: 150 } }, // Back straight
-       { p1: { x: 800, y: 500 }, p2: { x: 950, y: 500 } }, // Final sector
+       { p1: { x: 300, y: 650 }, p2: { x: 700, y: 748 } }, // Start/Finish (Bottom Straight)
+       { p1: { x: 20, y: 150 }, p2: { x: 260, y: 150 } },   // Top Turn 1 (Lane 1->2)
+       { p1: { x: 260, y: 600 }, p2: { x: 552, y: 600 } },  // Bottom Turn 1 (Lane 2->3 - Under Div 2)
+       { p1: { x: 552, y: 150 }, p2: { x: 804, y: 150 } },  // Top Turn 2 (Lane 3->4)
     ]
   }
 ];
