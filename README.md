@@ -1,30 +1,14 @@
-# Drift King - Top-Down Simulator
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-A high-performance top-down racing and drifting simulator built with vanilla HTML5 Canvas and JavaScript. No build steps or dynamic hosting required.
+## Run Locally
 
-## Features
-- Realistic vector-based car physics
-- Drifting mechanics with counter-steering and handbrake
-- Particle effects and skidmarks
-- Three challenging tracks
-- Lap timing and best-lap tracking
+**Prerequisites:**  Node.js
 
-## How to Run
 
-Since this is a fully static web app, you can run it in two ways:
-
-### 1. Locally (Browser)
-Simply open `index.html` in any modern web browser.
-
-### 2. Static Hosting
-Upload the following files to any static hosting provider (e.g., Firebase Hosting, GitHub Pages, Netlify):
-- `index.html`
-- `script.js`
-
-## Controls
-- **W / Up**: Gas
-- **S / Down**: Brake / Reverse
-- **A / Left**: Steer Left
-- **D / Right**: Steer Right
-- **Space**: Handbrake
-- **Exit Track**: Return to main menu
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
